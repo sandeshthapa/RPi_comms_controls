@@ -8,7 +8,7 @@ Raspberry Pi 4 communication and control projects
 ## Sensing 
 ### Accelerometer 
 
-### Controls 
+## Controls 
 ### TBD
 
 ## Content 
