@@ -32,6 +32,7 @@ finally:
 # SEND The recieved modbus msg as a CAN msg 
 
 import can
+
 # Create a CAN bus interface
 bus = can.interface.Bus(channel='can0', bustype='socketcan')
 
