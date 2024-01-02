@@ -15,7 +15,17 @@ try:
     client.connect()
 
     # Read a holding register (you can change the address and quantity)
-    result = client.read_holding_registers(0, 1, unit=1)
+    register_address = 2000; 
+    # Address of the holding register to read (e.g., 40001 in Modbus notation)
+    register_address = 200
+
+    # Modbus slave device address
+    slave_address = '192.168.129.100'
+
+    # Number of registers to read
+    num_registers = 1
+    
+    result = client.read_holding_registers(register_address, num_registers, unit=slave_address)
 
     if result.isError():
         print(f"Error reading Modbus data: {result.message}")
