@@ -17,13 +17,14 @@ try:
     # Read a holding register (you can change the address and quantity)
     register_address = 2000; 
     # Address of the holding register to read (e.g., 40001 in Modbus notation)
-    register_address = 200
+    # 4113
+    register_address = 0x1011;  
 
     # Modbus slave device address
     slave_address = '192.168.129.100'
 
     # Number of registers to read
-    num_registers = 1
+    num_registers = 2
     
     result = client.read_holding_registers(register_address, num_registers, unit=slave_address)
 
@@ -48,8 +49,8 @@ bus = can.interface.Bus(channel='can0', bustype='socketcan')
 
 # Create a CAN message
 message = can.Message(
-    arbitration_id=0x123,  # Arbitration ID
-    data=[0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08],  # Data bytes
+    arbitration_id=0x100,  # Arbitration ID
+    # data=[0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08],  # Data bytes
     extended_id=False  # Standard CAN frame
 )
 
